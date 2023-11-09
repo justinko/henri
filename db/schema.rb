@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_09_024110) do
     t.text "text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["text"], name: "index_quotes_on_text", unique: true
   end
 
   create_table "ratings", force: :cascade do |t|

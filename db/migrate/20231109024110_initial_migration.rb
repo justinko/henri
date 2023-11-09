@@ -1,7 +1,7 @@
 class InitialMigration < ActiveRecord::Migration[7.1]
   def change
     create_table :quotes do |t|
-      t.text :text, null: false
+      t.text :text, null: false, index: { unique: true }
       t.timestamps
     end
 
