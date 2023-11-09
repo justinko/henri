@@ -1,0 +1,14 @@
+<h2>
+  <%= @quote.text %>
+</h2>
+
+<p>
+  Average rating:
+  <%= @quote.ratings.average(:number) %>
+</p>
+
+<%= form_with model: [@quote, @rating] do |f| %>
+  <%= f.object.errors.full_messages.to_sentence %>
+  <%= f.number_field :number, in: Rating::NUMBER_RANGE %>
+  <%= f.submit %>
+<% end %>
