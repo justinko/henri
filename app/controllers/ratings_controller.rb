@@ -7,7 +7,7 @@ class RatingsController < ApplicationController
     if @rating.save
       redirect_to root_url
     else
-      render "quotes/show"
+      render "quotes/show", status: :unprocessable_entity
     end
   end
 
